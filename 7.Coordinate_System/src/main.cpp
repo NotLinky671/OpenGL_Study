@@ -105,7 +105,7 @@ int main() {
     glEnable(GL_DEPTH_TEST);
 // -------------------------------------------------------------------------------------------------
     // Shader
-    Shader* MyShader = new Shader("shaders/VertexShader.vs", "shaders/FragmentShader.fs");
+    Shader* MyShader = new Shader("shaders/VertexShader.vert", "shaders/FragmentShader.frag");
 // -------------------------------------------------------------------------------------------------
     // VAO
     unsigned int VAO;

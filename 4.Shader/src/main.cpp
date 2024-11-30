@@ -51,7 +51,7 @@ int main() {
     // glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 // -------------------------------------------------------------------------------------------------
     // Shader
-    Shader* MyShader = new Shader("shaders/VertexShader.vs", "shaders/FragmentShader.fs");
+    Shader* MyShader = new Shader("shaders/VertexShader.vert", "shaders/FragmentShader.frag");
 // -------------------------------------------------------------------------------------------------
     // VAO
     unsigned int VAO;

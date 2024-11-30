@@ -2,8 +2,6 @@ cmake_minimum_required(VERSION 3.10)
 
 project(Color)
 
-link_directories(${CMAKE_SOURCE_DIR}/3rdParty/glfw/lib)
-
 set(SRC
     ${CMAKE_SOURCE_DIR}/3rdParty/glad/src/glad.c
     src/main.cpp
@@ -24,6 +22,7 @@ set(SRC
 
 file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/shaders DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 file(COPY ${CMAKE_SOURCE_DIR}/Texture DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
+file(COPY ${CMAKE_SOURCE_DIR}/3rdParty/glfw/lib/glfw3.dll DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 
 add_executable(${PROJECT_NAME} ${SRC})
 
@@ -36,4 +35,5 @@ target_include_directories(${PROJECT_NAME} PRIVATE
     ${CMAKE_SOURCE_DIR}/3rdParty/imgui/include
 )
 
-target_link_libraries(${PROJECT_NAME} glfw3.lib opengl32.lib)
+target_link_libraries(${PROJECT_NAME} ${CMAKE_SOURCE_DIR}/3rdParty/glfw/lib/glfw3dll.lib)
+target_link_libraries(${PROJECT_NAME} opengl32)

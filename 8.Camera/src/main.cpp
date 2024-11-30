@@ -186,7 +186,7 @@ int main() {
     ImGui_ImplOpenGL3_Init("#version 330");
 // -------------------------------------------------------------------------------------------------
     // Shader
-    Shader* MyShader = new Shader("shaders/VertexShader.vs", "shaders/FragmentShader.fs");
+    Shader* MyShader = new Shader("shaders/VertexShader.vert", "shaders/FragmentShader.frag");
 // -------------------------------------------------------------------------------------------------
     // VAO
     unsigned int VAO;

@@ -161,8 +161,8 @@ int main() {
     ImGui_ImplOpenGL3_Init("#version 330");
 // -------------------------------------------------------------------------------------------------
     // Shader
-    Shader* MyShader = new Shader("shaders/VertexShader.vs", "shaders/FragmentShader.fs");
-    Shader* LightShader = new Shader("shaders/V_Light.vs", "shaders/F_Light.fs");
+    Shader* MyShader = new Shader("shaders/VertexShader.vert", "shaders/FragmentShader.frag");
+    Shader* LightShader = new Shader("shaders/V_Light.vert", "shaders/F_Light.frag");
 // -------------------------------------------------------------------------------------------------
     // cube_VBO
     VertexBuffer cube_VBO(cube_vertices, sizeof(cube_vertices));

@@ -66,7 +66,7 @@ float cube_vertices[] = {
     -0.5f,  0.5f, -0.5f,  0.0f,  1.0f,  0.0f,  0.0f, 1.0f
 };
 
-float light_vertices[] = {
+float plane_vertices[] = {
         -0.5f, -0.5f, -0.5f,
          0.5f, -0.5f, -0.5f,
          0.5f,  0.5f, -0.5f,
@@ -177,7 +177,7 @@ int main() {
     cube_VAO.AddBuffer(cube_VBO, cube_Layout);
 // -------------------------------------------------------------------------------------------------
     // PointLight_VBO
-    VertexBuffer pointlight_VBO(light_vertices, sizeof(light_vertices));
+    VertexBuffer pointlight_VBO(plane_vertices, sizeof(plane_vertices));
     // PointLight_VAO
     VertexArray pointlight_VAO;
     VertexBufferLayout pointlight_Layout;

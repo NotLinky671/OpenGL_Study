@@ -22,7 +22,7 @@
 #include <iostream>
 #include <filesystem>
 
-float light_vertices[] = {
+float plane_vertices[] = {
         -0.5f, -0.5f, -0.5f,
          0.5f, -0.5f, -0.5f,
          0.5f,  0.5f, -0.5f,

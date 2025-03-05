@@ -22,92 +22,59 @@
 #include <iostream>
 
 float cube_vertices[] = {
-    // positions          // normals           // texture coords
-    -0.5f, -0.5f, -0.5f,  0.0f,  0.0f, -1.0f,  0.0f, 0.0f,
-     0.5f, -0.5f, -0.5f,  0.0f,  0.0f, -1.0f,  1.0f, 0.0f,
-     0.5f,  0.5f, -0.5f,  0.0f,  0.0f, -1.0f,  1.0f, 1.0f,
-     0.5f,  0.5f, -0.5f,  0.0f,  0.0f, -1.0f,  1.0f, 1.0f,
-    -0.5f,  0.5f, -0.5f,  0.0f,  0.0f, -1.0f,  0.0f, 1.0f,
-    -0.5f, -0.5f, -0.5f,  0.0f,  0.0f, -1.0f,  0.0f, 0.0f,
+        // positions          // texture Coords
+        -0.5f, -0.5f, -0.5f,  0.0f, 0.0f,
+        0.5f, -0.5f, -0.5f,  1.0f, 0.0f,
+        0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
+        0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
+        -0.5f,  0.5f, -0.5f,  0.0f, 1.0f,
+        -0.5f, -0.5f, -0.5f,  0.0f, 0.0f,
 
-    -0.5f, -0.5f,  0.5f,  0.0f,  0.0f, 1.0f,   0.0f, 0.0f,
-     0.5f, -0.5f,  0.5f,  0.0f,  0.0f, 1.0f,   1.0f, 0.0f,
-     0.5f,  0.5f,  0.5f,  0.0f,  0.0f, 1.0f,   1.0f, 1.0f,
-     0.5f,  0.5f,  0.5f,  0.0f,  0.0f, 1.0f,   1.0f, 1.0f,
-    -0.5f,  0.5f,  0.5f,  0.0f,  0.0f, 1.0f,   0.0f, 1.0f,
-    -0.5f, -0.5f,  0.5f,  0.0f,  0.0f, 1.0f,   0.0f, 0.0f,
+        -0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
+        0.5f, -0.5f,  0.5f,  1.0f, 0.0f,
+        0.5f,  0.5f,  0.5f,  1.0f, 1.0f,
+        0.5f,  0.5f,  0.5f,  1.0f, 1.0f,
+        -0.5f,  0.5f,  0.5f,  0.0f, 1.0f,
+        -0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
 
-    -0.5f,  0.5f,  0.5f, -1.0f,  0.0f,  0.0f,  1.0f, 0.0f,
-    -0.5f,  0.5f, -0.5f, -1.0f,  0.0f,  0.0f,  1.0f, 1.0f,
-    -0.5f, -0.5f, -0.5f, -1.0f,  0.0f,  0.0f,  0.0f, 1.0f,
-    -0.5f, -0.5f, -0.5f, -1.0f,  0.0f,  0.0f,  0.0f, 1.0f,
-    -0.5f, -0.5f,  0.5f, -1.0f,  0.0f,  0.0f,  0.0f, 0.0f,
-    -0.5f,  0.5f,  0.5f, -1.0f,  0.0f,  0.0f,  1.0f, 0.0f,
+        -0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+        -0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
+        -0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+        -0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+        -0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
+        -0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
 
-     0.5f,  0.5f,  0.5f,  1.0f,  0.0f,  0.0f,  1.0f, 0.0f,
-     0.5f,  0.5f, -0.5f,  1.0f,  0.0f,  0.0f,  1.0f, 1.0f,
-     0.5f, -0.5f, -0.5f,  1.0f,  0.0f,  0.0f,  0.0f, 1.0f,
-     0.5f, -0.5f, -0.5f,  1.0f,  0.0f,  0.0f,  0.0f, 1.0f,
-     0.5f, -0.5f,  0.5f,  1.0f,  0.0f,  0.0f,  0.0f, 0.0f,
-     0.5f,  0.5f,  0.5f,  1.0f,  0.0f,  0.0f,  1.0f, 0.0f,
+        0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+        0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
+        0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+        0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+        0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
+        0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
 
-    -0.5f, -0.5f, -0.5f,  0.0f, -1.0f,  0.0f,  0.0f, 1.0f,
-     0.5f, -0.5f, -0.5f,  0.0f, -1.0f,  0.0f,  1.0f, 1.0f,
-     0.5f, -0.5f,  0.5f,  0.0f, -1.0f,  0.0f,  1.0f, 0.0f,
-     0.5f, -0.5f,  0.5f,  0.0f, -1.0f,  0.0f,  1.0f, 0.0f,
-    -0.5f, -0.5f,  0.5f,  0.0f, -1.0f,  0.0f,  0.0f, 0.0f,
-    -0.5f, -0.5f, -0.5f,  0.0f, -1.0f,  0.0f,  0.0f, 1.0f,
+        -0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+        0.5f, -0.5f, -0.5f,  1.0f, 1.0f,
+        0.5f, -0.5f,  0.5f,  1.0f, 0.0f,
+        0.5f, -0.5f,  0.5f,  1.0f, 0.0f,
+        -0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
+        -0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
 
-    -0.5f,  0.5f, -0.5f,  0.0f,  1.0f,  0.0f,  0.0f, 1.0f,
-     0.5f,  0.5f, -0.5f,  0.0f,  1.0f,  0.0f,  1.0f, 1.0f,
-     0.5f,  0.5f,  0.5f,  0.0f,  1.0f,  0.0f,  1.0f, 0.0f,
-     0.5f,  0.5f,  0.5f,  0.0f,  1.0f,  0.0f,  1.0f, 0.0f,
-    -0.5f,  0.5f,  0.5f,  0.0f,  1.0f,  0.0f,  0.0f, 0.0f,
-    -0.5f,  0.5f, -0.5f,  0.0f,  1.0f,  0.0f,  0.0f, 1.0f
-};
+        -0.5f,  0.5f, -0.5f,  0.0f, 1.0f,
+        0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
+        0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+        0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+        -0.5f,  0.5f,  0.5f,  0.0f, 0.0f,
+        -0.5f,  0.5f, -0.5f,  0.0f, 1.0f
+    };
 
 float plane_vertices[] = {
-        -0.5f, -0.5f, -0.5f,
-         0.5f, -0.5f, -0.5f,
-         0.5f,  0.5f, -0.5f,
-         0.5f,  0.5f, -0.5f,
-        -0.5f,  0.5f, -0.5f,
-        -0.5f, -0.5f, -0.5f,
+        // positions          // texture Coords (note we set these higher than 1 (together with GL_REPEAT as texture wrapping mode). this will cause the floor texture to repeat)
+        5.0f, -0.5f,  5.0f,  2.0f, 0.0f,
+        -5.0f, -0.5f,  5.0f,  0.0f, 0.0f,
+        -5.0f, -0.5f, -5.0f,  0.0f, 2.0f,
 
-        -0.5f, -0.5f,  0.5f,
-         0.5f, -0.5f,  0.5f,
-         0.5f,  0.5f,  0.5f,
-         0.5f,  0.5f,  0.5f,
-        -0.5f,  0.5f,  0.5f,
-        -0.5f, -0.5f,  0.5f,
-
-        -0.5f,  0.5f,  0.5f,
-        -0.5f,  0.5f, -0.5f,
-        -0.5f, -0.5f, -0.5f,
-        -0.5f, -0.5f, -0.5f,
-        -0.5f, -0.5f,  0.5f,
-        -0.5f,  0.5f,  0.5f,
-
-         0.5f,  0.5f,  0.5f,
-         0.5f,  0.5f, -0.5f,
-         0.5f, -0.5f, -0.5f,
-         0.5f, -0.5f, -0.5f,
-         0.5f, -0.5f,  0.5f,
-         0.5f,  0.5f,  0.5f,
-
-        -0.5f, -0.5f, -0.5f,
-         0.5f, -0.5f, -0.5f,
-         0.5f, -0.5f,  0.5f,
-         0.5f, -0.5f,  0.5f,
-        -0.5f, -0.5f,  0.5f,
-        -0.5f, -0.5f, -0.5f,
-
-        -0.5f,  0.5f, -0.5f,
-         0.5f,  0.5f, -0.5f,
-         0.5f,  0.5f,  0.5f,
-         0.5f,  0.5f,  0.5f,
-        -0.5f,  0.5f,  0.5f,
-        -0.5f,  0.5f, -0.5f
+        5.0f, -0.5f,  5.0f,  2.0f, 0.0f,
+        -5.0f, -0.5f, -5.0f,  0.0f, 2.0f,
+        5.0f, -0.5f, -5.0f,  2.0f, 2.0f
 };
 
 void processInput(GLFWwindow* window) {
@@ -126,7 +93,7 @@ int main() {
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 // -------------------------------------------------------------------------------------------------
     // 创建Window(窗口)
-    GLFWwindow* window = glfwCreateWindow(1000, 720, "OpenGL_Study_Lighting_maps", NULL, NULL);
+    GLFWwindow* window = glfwCreateWindow(1000, 720, "OpenGL_Study_Depth_Testing", NULL, NULL);
     if(window == NULL) {
         std::cout << "Failed to create GLFW window" << std::endl;
         glfwTerminate();
@@ -150,6 +117,7 @@ int main() {
     // glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
     // 开启深度缓冲
     glEnable(GL_DEPTH_TEST);
+    glDepthFunc(GL_LESS);
 // -------------------------------------------------------------------------------------------------
     // Setup Dear ImGui context
     IMGUI_CHECKVERSION();
@@ -163,8 +131,8 @@ int main() {
     ImGui_ImplOpenGL3_Init("#version 330");
 // -------------------------------------------------------------------------------------------------
     // Shader
-    Shader* MyShader = new Shader("shaders/VertexShader.vert", "shaders/FragmentShader.frag");
-    Shader* LightShader = new Shader("shaders/V_Light.vert", "shaders/F_Light.frag");
+    Shader* cube_shader = new Shader("shaders/Depth_Testing.vert", "shaders/Depth_Testing.frag");
+    Shader* plane_shader = new Shader("shaders/Depth_Testing_Plane.vert", "shaders/Depth_Testing_Plane.frag");
 // -------------------------------------------------------------------------------------------------
     // cube_VBO
     VertexBuffer cube_VBO(cube_vertices, sizeof(cube_vertices));
@@ -172,24 +140,23 @@ int main() {
     VertexArray cube_VAO;
     VertexBufferLayout cube_Layout;
     cube_Layout.Push<float>(3);
-    cube_Layout.Push<float>(3);
     cube_Layout.Push<float>(2);
     cube_VAO.AddBuffer(cube_VBO, cube_Layout);
 // -------------------------------------------------------------------------------------------------
     // light_VBO
-    VertexBuffer light_VBO(plane_vertices, sizeof(plane_vertices));
+    VertexBuffer plane_VBO(plane_vertices, sizeof(plane_vertices));
     // light_VAO
-    VertexArray light_VAO;
-    VertexBufferLayout light_Layout;
-    light_Layout.Push<float>(3);
-    light_VAO.AddBuffer(light_VBO, light_Layout);
+    VertexArray plane_VAO;
+    VertexBufferLayout plane_Layout;
+    plane_Layout.Push<float>(3);
+    plane_Layout.Push<float>(2);
+    plane_VAO.AddBuffer(plane_VBO, plane_Layout);
 // -------------------------------------------------------------------------------------------------
     // Texture
-    Texture diffuseMap("Texture/container2.png");
-    Texture specularMap("Texture/container2_specular.png");
-    MyShader->use();
-    MyShader->setInt("material.ambient", 0);
-    MyShader->setInt("material.specular", 1);
+    Texture cube_texture("Texture/marble.jpg");
+    cube_texture.Bind();
+    Texture plane_texture("Texture/metal.png");
+    plane_texture.Bind();
 // -------------------------------------------------------------------------------------------------
     // Camera
     Camera camera(glm::vec3(0.0f, 0.0f, 3.0f), 0.0f, 180.0f, glm::vec3(0.0f, 1.0f, 0.0f));
@@ -206,34 +173,11 @@ int main() {
 // -------------------------------------------------------------------------------------------------
     // Light_Model
     glm::mat4 light_model;
+    glm::vec3 light_position(-3.0f, 0.0f, 0.0f);
 // -------------------------------------------------------------------------------------------------
     // Light
-    struct Light {
-        glm::vec3 position;
-        glm::vec3 ambient;
-        glm::vec3 diffuse;
-        glm::vec3 specular;
-    };
-    Light light {
-        glm::vec3(-3.0f, 0.0f, 0.0f),
-        glm::vec3(0.2f, 0.2f, 0.2f),          
-        glm::vec3(0.5f, 0.5f, 0.5f),          
-        glm::vec3(1.0f, 1.0f, 1.0f)      
-    };
-// -------------------------------------------------------------------------------------------------
-    // Material
-    struct Material {
-        glm::vec3 ambient;
-        glm::vec3 diffuse;
-        glm::vec3 specular;
-        float shininess;
-    };
-    Material material {
-        glm::vec3(1.0f, 0.5f, 0.31f),          
-        glm::vec3(1.0f, 0.5f, 0.31f),          
-        glm::vec3(0.5f, 0.5f, 0.5f),
-        32.0f          
-    };
+    glm::vec3 lightColor(1.0f, 1.0f, 1.0f);
+    glm::vec3 objectColor(1.0f, 0.5f, 0.31f);
 // -------------------------------------------------------------------------------------------------
     // 循环
     while(!glfwWindowShouldClose(window)) {
@@ -254,28 +198,22 @@ int main() {
         model = glm::scale(model, cube_scale); 
         view = camera.GetViewMatrix();
         projection = glm::perspective(glm::radians(45.0f), 1000.0f / 720.0f, 0.1f, 100.0f);       
-        MyShader->use();
-        MyShader->setVec3("light.position", light.position);
-        MyShader->setVec3("viewPos", camera.Position);
-        MyShader->setMat4("model", model);
-        MyShader->setMat4("view", view);
-        MyShader->setMat4("projection", projection);
-        MyShader->setFloat("material.shininess", material.shininess);
-        MyShader->setVec3("light.ambient", light.ambient);
-        MyShader->setVec3("light.diffuse", light.diffuse);
-        MyShader->setVec3("light.specular", light.specular);
-        diffuseMap.Bind(0);
-        specularMap.Bind(1);
+        cube_shader->use();
+        cube_shader->setMat4("model", model);
+        cube_shader->setMat4("view", view);
+        cube_shader->setMat4("projection", projection);
         cube_VAO.Bind();
+        cube_texture.Bind();
         glDrawArrays(GL_TRIANGLES, 0, 36);
 // -------------------------------------------------------------------------------------------------
         // Light Transform
-        light_model = glm::translate(glm::mat4(1.0f), light.position);
-        LightShader->use();
-        LightShader->setMat4("model", light_model);
-        LightShader->setMat4("view", view);
-        LightShader->setMat4("projection", projection);
-        light_VAO.Bind();
+        light_model = glm::translate(glm::mat4(1.0f), light_position);
+        plane_shader->use();
+        plane_shader->setMat4("model", light_model);
+        plane_shader->setMat4("view", view);
+        plane_shader->setMat4("projection", projection);
+        plane_VAO.Bind();
+        plane_texture.Bind();
         glDrawArrays(GL_TRIANGLES, 0, 36);
 // -------------------------------------------------------------------------------------------------
         // Camera Transform
@@ -296,7 +234,7 @@ int main() {
         ImGui::DragFloat3("Cube_Scale", &cube_scale.x, 0.1f, -FLT_MAX, FLT_MAX);
 
         ImGui::SeparatorText("Light");
-        ImGui::DragFloat3("Light_Position", &light.position.x, 0.01f, -FLT_MAX, FLT_MAX);
+        ImGui::DragFloat3("Light_Position", &light_position.x, 0.01f, -FLT_MAX, FLT_MAX);
 
         ImGui::End();
 
